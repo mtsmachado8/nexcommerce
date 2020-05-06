@@ -1,16 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 import Stripe from 'stripe';
-import { GetStaticPaths, GetStaticProps } from 'next';
 
 import stripeConfig from '../config/stripe';
 import CheckoutButton from '../components/CheckoutButton';
 
-interface Props {
-  sku: Stripe.Sku;
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const stripe = new Stripe(stripeConfig.secretKey, {
     apiVersion: '2020-03-02',
   });
@@ -29,14 +24,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const stripe = new Stripe(stripeConfig.secretKey, {
     apiVersion: '2020-03-02',
   });
 
   const { skuId } = params;
 
-  const sku = await stripe.skus.retrieve(skuId as string);
+  const sku = await stripe.skus.retrieve(skuId);
 
   return {
     props: {
@@ -45,7 +40,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const Product: React.FC<Props> = ({ sku }) => {
+const Product = ({ sku }) => {
   return (
     <div>
       <h1>{sku.attributes.name}</h1>
@@ -63,12 +58,14 @@ const Product: React.FC<Props> = ({ sku }) => {
         {Number(sku.price / 100).toFixed(2)} {sku.currency.toUpperCase()}
       </h2>
 
-      <CheckoutButton skuId={sku.id} itemName={sku.attributes.name} />
+      <CheckoutButton skuId={sku.id} />
 
       <br />
       <br />
 
-      <Link href="/">Go back</Link>
+      <Link href="/">
+        <a>Go back</a>
+      </Link>
     </div>
   );
 };
