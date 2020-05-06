@@ -1,5 +1,5 @@
 <h1 align="center">
-Code Challenge - E-commerce with Next.js SSG and Stripe
+E-commerce with Next.js SSG and Stripe
 </h1>
 
 <p align="center">Mini E-commerce using Next.js Static Site Generator and Stripe Payment API.</p>
@@ -17,11 +17,11 @@ Code Challenge - E-commerce with Next.js SSG and Stripe
 
 ## Participants
 
-| [<img src="https://avatars3.githubusercontent.com/u/10366880?s=460&v=4" width="75px;"/>](https://github.com/guilhermerodz) |
+| [<img src="https://avatars0.githubusercontent.com/u/11022437?s=400&u=f3754c28dcf0e1cbb1db869d1fb7dfe0e5c73d7e&v=4" width="75px;"/>](https://github.com/mtsmachado8) |
 | :------------------------------------------------------------------------------------------------------------------------: |
 
 
-| [Guilherme Rodz](https://github.com/guilhermerodz)
+| [Mateus Machado](https://github.com/mtsmachado8)
 
 ## Functional Requirements
 
