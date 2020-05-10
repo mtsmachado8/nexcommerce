@@ -1,9 +1,11 @@
-import Link from 'next/link';
 import React from 'react';
 import Stripe from 'stripe';
 
 import stripeConfig from '../config/stripe';
 import CheckoutButton from '../components/CheckoutButton';
+import Product from '../components/Product'
+import Header from '../components/Header';
+import GlobalStyles from '../components/GlobalStyles';
 
 export const getStaticPaths = async () => {
   const stripe = new Stripe(stripeConfig.secretKey, {
@@ -40,34 +42,24 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-const Product = ({ sku }) => {
+const ProductDetails = ({ sku }) => {
+  const product = {
+    name: sku.attributes.name,
+    image: sku.image,
+    price: (sku.price / 100),
+    url: ('/' + sku.id)
+  }
+
   return (
-    <div>
-      <h1>{sku.attributes.name}</h1>
-
-      {sku.image && (
-        <img
-          src={sku.image}
-          style={{
-            width: '100px',
-          }}
-        />
-      )}
-
-      <h2>
-        {Number(sku.price / 100).toFixed(2)} {sku.currency.toUpperCase()}
-      </h2>
-
-      <CheckoutButton skuId={sku.id} />
-
-      <br />
-      <br />
-
-      <Link href="/">
-        <a>Go back</a>
-      </Link>
-    </div>
+    <>
+      <Header back>Loja da Bruna</Header>
+      <div>
+        <Product {...product}/>
+        <CheckoutButton skuId={sku.id} />
+      </div>
+    </>
+    
   );
 };
 
-export default Product;
+export default ProductDetails;

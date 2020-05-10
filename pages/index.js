@@ -1,7 +1,9 @@
 import Stripe from 'stripe';
 
 import stripeConfig from '../config/stripe';
-import Link from 'next/link';
+import ProductList from '../components/ProductList'
+import GlobalStyles from '../components/GlobalStyles';
+import Header from '../components/Header';
 
 export const getStaticProps = async () => {
   const stripe = new Stripe(stripeConfig.secretKey, {
@@ -18,36 +20,19 @@ export const getStaticProps = async () => {
 };
 
 const HomePage= ({ skus }) => {
+  const products = skus.map(sku => ({
+    key: sku.id,
+    name: sku.attributes.name,
+    image: sku.image,
+    price: (sku.price / 100),
+    url: ('/' + sku.id)
+  }))
+
   return (
     <>
-      <h1>Simple Stripe Store</h1>
-
+      <Header>Loja da Bruna</Header>
       <hr />
-
-      {skus.map((sku) => (
-        <div key={sku.id}>
-          <h1>{sku.attributes.name}</h1>
-
-          {sku.image && (
-            <img
-              src={sku.image}
-              style={{
-                width: '100px',
-              }}
-            />
-          )}
-
-          <h2>
-            {Number(sku.price / 100).toFixed(2)} {sku.currency.toUpperCase()}
-          </h2>
-
-          <Link href={'/' + sku.id}>
-            <a>Visit Page</a>
-          </Link>
-
-          <hr />
-        </div>
-      ))}
+      <ProductList products={products}/>
     </>
   );
 };

@@ -17,8 +17,16 @@
   "dependencies": {
     "@stripe/stripe-js": "^1.5.0",
     "next": "9.3.5",
+    "next-fonts": "^1.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "stripe": "^8.49.0"
+    "react-image": "^2.4.0",
+    "react-lazyload": "^2.6.7",
+    "stripe": "^8.49.0",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^5.4.0",
+    "babel-plugin-styled-components": "^1.10.7"
   }
 }

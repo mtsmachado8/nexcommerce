@@ -2,6 +2,8 @@ import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 
 import stripeConfig from '../config/stripe';
+import styled from 'styled-components';
+import CentralizeRow from './CentralizeRow';
 
 const stripePromise = loadStripe(stripeConfig.publicKey);
 
@@ -25,10 +27,16 @@ const CheckoutButton = ({ skuId }) => {
     }
   }
   return (
-    <button role="link" onClick={handleClick}>
-      Buy
-    </button>
+    <CentralizeRow>
+      <BuyButton role="link" onClick={handleClick}>
+        Comprar
+      </BuyButton>
+    </CentralizeRow>
   );
 };
 
 export default CheckoutButton;
+
+const BuyButton = styled.button`
+  width: 90%;
+`

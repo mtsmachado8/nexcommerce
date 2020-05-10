@@ -7,7 +7,7 @@ import stripeConfig from '../config/stripe';
 const SuccessPage = ({ sku }) => {
   return (
     <>
-      <h1>Thank you for buying {sku?.attributes?.name}!</h1>
+      <h1>Obrigado por comprar {sku?.attributes?.name}!</h1>
 
       <Link href="/">
         <a>Go back</a>
