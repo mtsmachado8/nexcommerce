@@ -1,4 +1,4 @@
-name: pwa
+name: frontend
 on: 
   push:
     branches:
@@ -15,5 +15,5 @@ jobs:
       - name: Deploy Front
         run: |
           if [ "${GITHUB_REF}" == "refs/heads/master" ]; then
-            now ./packages/pwa/@build/output/build/bundle --token ${{ secrets.ZEIT_TOKEN }} --local-config .now/now.production.json --prod --confirm
+            now ./.next --token ${{ secrets.ZEIT_TOKEN }} --local-config .now/now.production.json --prod --confirm
           fi
