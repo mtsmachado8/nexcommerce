@@ -43,12 +43,11 @@ export default props => {
 }
 
 const ContentProduct = styled.a`
-  min-width: 200px;
+  min-width: 150px;
   max-width: 400px;
   min-height: 200px;
   max-height: 400px;
 
-  margin: 2px;
   background-color: white;
   text-decoration: none;
   border: 1px solid #ce0bd21c;
