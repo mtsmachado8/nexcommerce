@@ -23,7 +23,8 @@ E-commerce with Next.js SSG and Stripe
 ## Nexcommerce Working
 
 Feel free to try it online on our website.
-Here some pictures of it
+Here a gif of it working
+![nexcommerce](https://user-images.githubusercontent.com/11022437/82621337-3d688c80-9bb1-11ea-8ddc-d3683791b486.gif)
 
 ## Functional Requirements
 
