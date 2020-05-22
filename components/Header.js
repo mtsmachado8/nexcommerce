@@ -19,7 +19,7 @@ export default Header
 
 const HeaderComponent = styled.div`
   height: 51px;
-  background-color: b55050;
+  background-color: #b55050;
   display: flex;
   flex-direction: row;
   justify-content: center;
