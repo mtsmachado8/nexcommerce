@@ -1,0 +1,7 @@
+
+{
+  "name": "nexcommerce",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

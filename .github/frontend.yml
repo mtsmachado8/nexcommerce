@@ -1,0 +1,19 @@
+name: pwa
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn
+      - run: yarn build
+        env:
+          NODE_ENV: production
+      - name: Deploy Front
+        run: |
+          if [ "${GITHUB_REF}" == "refs/heads/master" ]; then
+            now ./packages/pwa/@build/output/build/bundle --token ${{ secrets.ZEIT_TOKEN }} --local-config .now/now.production.json --prod --confirm
+          fi
