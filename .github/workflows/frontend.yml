@@ -15,5 +15,5 @@ jobs:
       - name: Deploy Front
         run: |
           if [ "${GITHUB_REF}" == "refs/heads/master" ]; then
-            now ./.next --token ${{ secrets.ZEIT_TOKEN }} --local-config .now/now.production.json --prod --confirm
+            now ./ --token ${{ secrets.ZEIT_TOKEN }} --local-config .now/now.production.json --prod --confirm
           fi
