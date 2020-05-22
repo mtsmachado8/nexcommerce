@@ -50,7 +50,7 @@ const ContentProduct = styled.a`
 
   background-color: white;
   text-decoration: none;
-  border: 1px solid #ce0bd21c;
+  border: 1px solid #e87272;
 
   :hover .withHover {
     opacity: 1;
