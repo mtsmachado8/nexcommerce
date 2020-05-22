@@ -14,8 +14,8 @@ const CheckoutButton = ({ skuId }) => {
     try{
       await stripe.redirectToCheckout({
         items: [{ sku: skuId, quantity: 1 }],
-        successUrl: `http://localhost:3000/success?skuId=${skuId}`,
-        cancelUrl: 'http://localhost:3000/cancel',
+        successUrl: `https://nexcommerce.now.sh/success?skuId=${skuId}`,
+        cancelUrl: 'https://nexcommerce.now.sh/cancel',
       });
     }catch (e) {
       console.log(e)
