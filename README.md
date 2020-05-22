@@ -20,8 +20,10 @@ E-commerce with Next.js SSG and Stripe
 | [<img src="https://avatars0.githubusercontent.com/u/11022437?s=400&u=f3754c28dcf0e1cbb1db869d1fb7dfe0e5c73d7e&v=4" width="75px;"/>](https://github.com/mtsmachado8) |
 | :------------------------------------------------------------------------------------------------------------------------: |
 
+## Nexcommerce Working
 
-| [Mateus Machado](https://github.com/mtsmachado8)
+Feel free to try it online on our website.
+Here some pictures of it
 
 ## Functional Requirements
 
